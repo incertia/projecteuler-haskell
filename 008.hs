@@ -11,4 +11,4 @@ n = 7316717653133062491922511967442657474235534919493496983520312774506326239578
 main :: IO ()
 main = putStrLn $ show ans
   where ans = last . sort . map product $ subs 13 $ digits n
-        digits n = read <$> return <$> show n
+        digits = map (read . return) . show
