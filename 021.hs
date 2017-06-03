@@ -1,3 +1,4 @@
+-- TODO: this doesn't work yet
 divisors :: Integer -> [Integer]
 divisors n = [x | x <- [1..n - 1], n `mod` x == 0]
 
