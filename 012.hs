@@ -1,4 +1,3 @@
-import Control.Monad (guard)
 import Data.List (group)
 
 pf :: Integer -> [Integer]
