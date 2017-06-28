@@ -20,6 +20,7 @@ import PE020 (solve020)
 import PE021 (solve021)
 import PE022 (solve022)
 import PE023 (solve023)
+import PE025 (solve025)
 import PE048 (solve048)
 import PE067 (solve067)
 
@@ -44,6 +45,7 @@ solve  20 = solve020
 solve  21 = solve021
 solve  22 = solve022
 solve  23 = solve023
+solve  25 = solve025
 solve  48 = solve048
 solve  67 = solve067
 solve   _ = putStrLn "no solver implemented"
