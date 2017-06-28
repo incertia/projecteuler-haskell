@@ -1,7 +1,9 @@
+module PE009 (solve009) where
+
 import Control.Monad (guard)
 
-main :: IO ()
-main = putStrLn $ show ans
+solve009 :: IO ()
+solve009 = putStrLn $ show ans
   where ans = head $ do
           a <- [1..998]
           b <- [1..999 - a]

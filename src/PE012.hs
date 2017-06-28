@@ -1,3 +1,5 @@
+module PE012 (solve012) where
+
 import Data.List (group)
 
 pf :: Integer -> [Integer]
@@ -11,6 +13,6 @@ nd n = product $ (+1) . toInteger . length <$> (group . pf $ n)
 trinums :: [Integer]
 trinums = scanl1 (+) [1..]
 
-main :: IO ()
-main = print ans
+solve012 :: IO ()
+solve012 = print ans
   where ans = head [n | n <- trinums, nd n > 500]
