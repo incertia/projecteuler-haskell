@@ -21,6 +21,7 @@ library
                      , PE012, PE013, PE014, PE015
                      , PE016, PE018, PE020
                      , PE021, PE022, PE023, PE025
+                     , PE029, PE030
                      , PE048
                      , PE067
   build-depends:       base >= 4.7 && < 5
