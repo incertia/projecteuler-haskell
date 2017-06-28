@@ -8,7 +8,7 @@ license-file:        LICENSE
 author:              Will Song <incertia@incertia.net>
 maintainer:          Will Song <incertia@incertia.net>
 copyright:           2017 Will Song
-category:            Web
+category:            Tool
 build-type:          Simple
 extra-source-files:  README.md
 cabal-version:       >=1.10
