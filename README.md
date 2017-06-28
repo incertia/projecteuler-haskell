@@ -11,5 +11,4 @@ We follow the standard Stack procedure.
 stack setup
 stack build
 stack exec pe -- <problem-number>
-stack runghc pe/Main.hs -- <problem-number>
 ```
