@@ -1,5 +1,7 @@
 module Solver (solve) where
 
+import Data.HashMap.Lazy (HashMap, fromList, lookupDefault)
+
 import PE001 (solve001)
 import PE002 (solve002)
 import PE003 (solve003)
@@ -26,36 +28,23 @@ import PE030 (solve030)
 import PE031 (solve031)
 import PE034 (solve034)
 import PE035 (solve035)
+import PE037 (solve037)
 import PE048 (solve048)
 import PE067 (solve067)
 
+solvers :: HashMap Integer (IO ())
+solvers = fromList
+  [ (001, solve001), (002, solve002), (003, solve003), (004, solve004), (005, solve005)
+  , (006, solve006), (007, solve007), (008, solve008), (009, solve009), (010, solve010)
+  , (012, solve012), (013, solve013), (014, solve014), (015, solve015)
+  , (016, solve016), (018, solve018), (020, solve020)
+  , (021, solve021), (022, solve022), (023, solve023), (025, solve025)
+  , (029, solve029), (030, solve030)
+  , (031, solve031), (034, solve034), (035, solve035)
+  , (037, solve037)
+  , (048, solve048)
+  , (067, solve067)
+  ]
+
 solve :: Integer -> IO ()
-solve   1 = solve001
-solve   2 = solve002
-solve   3 = solve003
-solve   4 = solve004
-solve   5 = solve005
-solve   6 = solve006
-solve   7 = solve007
-solve   8 = solve008
-solve   9 = solve009
-solve  10 = solve010
-solve  12 = solve012
-solve  13 = solve013
-solve  14 = solve014
-solve  15 = solve015
-solve  16 = solve016
-solve  18 = solve018
-solve  20 = solve020
-solve  21 = solve021
-solve  22 = solve022
-solve  23 = solve023
-solve  25 = solve025
-solve  29 = solve029
-solve  30 = solve030
-solve  31 = solve031
-solve  34 = solve034
-solve  35 = solve035
-solve  48 = solve048
-solve  67 = solve067
-solve   _ = putStrLn "no solver implemented"
+solve n = lookupDefault (putStrLn "no solver implemented") n solvers
