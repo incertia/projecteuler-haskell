@@ -18,7 +18,7 @@ library
   exposed-modules:     Solver
   other-modules:       PE001, PE002, PE003, PE004, PE005
                      , PE006, PE007, PE008, PE009, PE010
-                     , PE012, PE013, PE014, PE015
+                     , PE011, PE012, PE013, PE014, PE015
                      , PE016, PE018, PE020
                      , PE021, PE022, PE023, PE025
                      , PE029, PE030
@@ -26,10 +26,11 @@ library
                      , PE037
                      , PE048
                      , PE067
-  build-depends:       base >= 4.7 && < 5
-                     , primes
+  build-depends:       array
+                     , base >= 4.7 && < 5
                      , data-memocombinators
                      , unordered-containers
+                     , primes
   default-language:    Haskell2010
 
 executable pe
