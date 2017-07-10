@@ -16,8 +16,8 @@ d n = product [let k = length pl + 1 in (p^k - 1) `div` (p - 1) | pl@(p:_) <- gr
 ab :: Integer -> Bool
 ab n = d n > n
 
-solve023 :: IO ()
-solve023 = print $ sum [x | x <- l, x `notElem` absums]
+solve023 :: String -> Integer
+solve023 _ = sum [x | x <- l, x `notElem` absums]
   where absums = sum <$> combos
         combos = filter (\x -> head x < head (tail x)) $ mapM (const nums) [1..2]
         nums = filter ab l

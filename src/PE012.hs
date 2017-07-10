@@ -13,6 +13,5 @@ nd n = product $ (+1) . toInteger . length <$> (group . pf $ n)
 trinums :: [Integer]
 trinums = scanl1 (+) [1..]
 
-solve012 :: IO ()
-solve012 = print ans
-  where ans = head [n | n <- trinums, nd n > 500]
+solve012 :: String -> Integer
+solve012 _ = head [n | n <- trinums, nd n > 500]

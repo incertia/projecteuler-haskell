@@ -2,8 +2,7 @@ module PE004 (solve004) where
 
 import Data.List (sort)
 
-solve004 :: IO ()
-solve004 = putStrLn ans
-  where ans = last $ filter (\x -> x == reverse x) (show <$> prods)
-        prods = sort $ (*) <$> nums <*> nums
+solve004 :: String -> Integer
+solve004 _ = fromIntegral . maximum . filter (\x -> let x' = show x in x' == reverse x') $ prods
+  where prods = (*) <$> nums <*> nums
         nums = [1..999]

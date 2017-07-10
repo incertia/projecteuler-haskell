@@ -2,5 +2,5 @@ module PE020 (solve020) where
 
 import Data.Char (digitToInt)
 
-solve020 :: IO ()
-solve020 = print . sum . fmap digitToInt . show . product $ [1..100]
+solve020 :: String -> Integer
+solve020 _ = toInteger . sum . fmap digitToInt . show . product $ [1..100]

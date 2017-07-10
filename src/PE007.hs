@@ -7,5 +7,5 @@ import Data.Numbers.Primes (primes)
 -- primes = sieve [2..]
 --   where sieve (p:xs) = p : sieve [x | x <- xs, x `mod` p /= 0]
 
-solve007 :: IO ()
-solve007 = putStrLn $ show $ primes !! 10000
+solve007 :: String -> Integer
+solve007 _ = primes !! 10000

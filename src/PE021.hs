@@ -10,5 +10,5 @@ amicable :: Integer -> Bool
 amicable n = n /= n' && d n' == n
   where n' = d n
 
-solve021 :: IO ()
-solve021 = print . sum . filter amicable $ [1..9999]
+solve021 :: String -> Integer
+solve021 _  = sum . filter amicable $ [1..9999]

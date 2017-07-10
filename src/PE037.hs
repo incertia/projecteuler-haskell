@@ -8,5 +8,5 @@ truncatable n = ltrunc n && rtrunc n
         rtrunc n = isPrime n && (n < 10 || rtrunc (n `div` 10))
         digits = length . show
 
-solve037 :: IO ()
-solve037 = print . sum . take 11 . filter truncatable . filter (>7) $ primes
+solve037 :: String -> Integer
+solve037 _ = sum . take 11 . filter truncatable . filter (>7) $ primes

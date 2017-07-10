@@ -10,6 +10,6 @@ cl = integral cl'
         cl' 1 = 1
         cl' n = 1 + if even n then cl (n `div` 2) else cl (3 * n + 1)
 
-solve014 :: IO ()
-solve014 = print . fst . maximumBy (comparing snd) $ zip nums $ cl <$> nums
+solve014 :: String -> Integer
+solve014 _ = fst . maximumBy (comparing snd) . zip nums $ cl <$> nums
   where nums = [1..1000000]

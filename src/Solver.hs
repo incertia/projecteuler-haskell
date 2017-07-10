@@ -1,6 +1,7 @@
 module Solver (solve) where
 
-import Data.HashMap.Lazy (HashMap, fromList, lookupDefault)
+import Control.Exception (try)
+import qualified Data.HashMap.Lazy as H (HashMap, fromList, lookup)
 
 import PE001 (solve001)
 import PE002 (solve002)
@@ -33,8 +34,8 @@ import PE037 (solve037)
 import PE048 (solve048)
 import PE067 (solve067)
 
-solvers :: HashMap Integer (IO ())
-solvers = fromList
+solvers :: H.HashMap Integer (String -> Integer)
+solvers = H.fromList
   [ (001, solve001), (002, solve002), (003, solve003), (004, solve004), (005, solve005)
   , (006, solve006), (007, solve007), (008, solve008), (009, solve009), (010, solve010)
   , (011, solve011), (012, solve012), (013, solve013), (014, solve014), (015, solve015)
@@ -48,4 +49,16 @@ solvers = fromList
   ]
 
 solve :: Integer -> IO ()
-solve n = lookupDefault (putStrLn "no solver implemented") n solvers
+solve n = case H.lookup n solvers of
+  Nothing -> putStrLn "no solver implemented"
+  Just f  -> do
+    let ifile = "./input/" ++ pad 3 '0' (show n)
+    input <- readMaybeFile =<< try (readFile ifile)
+    print . f $ input
+
+  where pad :: Int-> b -> [b] -> [b]
+        pad n x xs = if length xs < n then pad n x (x:xs) else xs
+
+        readMaybeFile :: Either IOError String -> IO String
+        readMaybeFile (Left _)  = return ""
+        readMaybeFile (Right s) = return s
