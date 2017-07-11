@@ -20,7 +20,7 @@ library
                      , PE006, PE007, PE008, PE009, PE010
                      , PE011, PE012, PE013, PE014, PE015
                      , PE016, PE018, PE020
-                     , PE021, PE022, PE023, PE025
+                     , PE021, PE022, PE023, PE024, PE025
                      , PE029, PE030
                      , PE031, PE034, PE035
                      , PE037
