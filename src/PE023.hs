@@ -1,24 +1,23 @@
 module PE023 (solve023) where
 
-import Data.MemoCombinators (integral)
+import Data.Array (listArray, (!))
 import Data.List (group)
-import Data.Numbers.Primes (primes)
-
-pf :: Integer -> [Integer]
-pf = integral pf'
-  where pf' 1 = []
-        pf' n = p : pf (n `div` p)
-          where p = head [x | x <- primes, n `mod` x == 0]
+import Data.Numbers.Primes (primes, primeFactors)
 
 d :: Integer -> Integer
-d n = product [let k = length pl + 1 in (p^k - 1) `div` (p - 1) | pl@(p:_) <- group (pf n)] - n
+d n = product [ (p^k - 1) `div` (p - 1) | pl@(p:_) <- group (primeFactors n),
+                                          let k = length pl + 1
+              ]
 
 ab :: Integer -> Bool
-ab n = d n > n
+ab n = d n - n > n
 
 solve023 :: String -> Integer
-solve023 _ = sum [x | x <- l, x `notElem` absums]
-  where absums = sum <$> combos
-        combos = filter (\x -> head x < head (tail x)) $ mapM (const nums) [1..2]
-        nums = filter ab l
-        l = [1..28123]
+solve023 _ = sum [1..n] - sum absums
+  where absums = [x | x <- [1..n],
+                      let a = (x-) <$> takeWhile (<= x `div` 2) abs,
+                      any (abv !) a
+                 ]
+        abs = filter (abv !) [1..n]
+        abv = listArray (1, n) $ ab <$> [1..n]
+        n = 28123
