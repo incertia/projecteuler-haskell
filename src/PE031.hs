@@ -10,5 +10,5 @@ pandigital = or . fmap cond . prods
         cond = concatMap show >>> ((sort >>> group >>> length >>> (==9)) &&&
                                    notElem '0') >>> uncurry (&&)
 
-solve031 :: String -> Integer
-solve031 _ = sum . filter pandigital $ [1234..9876]
+solve032 :: String -> Integer
+solve032 _ = sum . filter pandigital $ [1234..9876]
