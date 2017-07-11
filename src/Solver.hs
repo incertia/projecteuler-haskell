@@ -53,8 +53,7 @@ solve n = case H.lookup n solvers of
   Nothing -> putStrLn "no solver implemented"
   Just f  -> do
     let ifile = "./input/" ++ pad 3 '0' (show n)
-    input <- readMaybeFile =<< try (readFile ifile)
-    print . f $ input
+    print . f =<< readMaybeFile =<< try (readFile ifile)
 
   where pad :: Int-> b -> [b] -> [b]
         pad n x xs = if length xs < n then pad n x (x:xs) else xs
