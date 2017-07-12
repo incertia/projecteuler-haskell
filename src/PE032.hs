@@ -1,7 +1,6 @@
 module PE032 (solve032) where
 
-import Control.Arrow ((&&&), (>>>))
-import Data.List (group, sort)
+import Data.List (sort)
 
 pandigital :: Integer -> Bool
 pandigital = or . fmap cond . prods
