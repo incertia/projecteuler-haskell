@@ -34,6 +34,7 @@ import PE032 (solve032)
 import PE034 (solve034)
 import PE035 (solve035)
 import PE037 (solve037)
+import PE038 (solve038)
 import PE048 (solve048)
 import PE067 (solve067)
 
@@ -46,7 +47,7 @@ solvers = H.fromList
   , (021, solve021), (022, solve022), (023, solve023), (024, solve024), (025, solve025)
   , (027, solve027), (028, solve028), (029, solve029), (030, solve030)
   , (032, solve032), (034, solve034), (035, solve035)
-  , (037, solve037)
+  , (037, solve037), (038, solve038)
   , (048, solve048)
   , (067, solve067)
   ]
