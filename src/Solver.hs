@@ -42,6 +42,7 @@ import PE048 (solve048)
 import PE062 (solve062)
 import PE067 (solve067)
 import PE072 (solve072)
+import PE079 (solve079)
 
 solvers :: H.HashMap Integer (String -> Integer)
 solvers = H.fromList
@@ -58,6 +59,7 @@ solvers = H.fromList
   , (062, solve062)
   , (067, solve067)
   , (072, solve072)
+  , (079, solve079)
   ]
 
 solve :: Integer -> IO ()

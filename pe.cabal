@@ -29,8 +29,10 @@ library
                      , PE062
                      , PE067
                      , PE072
+                     , PE079
   build-depends:       array
                      , base >= 4.7 && < 5
+                     , containers
                      , data-memocombinators
                      , unordered-containers
                      , primes
