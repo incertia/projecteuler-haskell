@@ -28,6 +28,7 @@ library
                      , PE047, PE048
                      , PE062
                      , PE067
+                     , PE072
   build-depends:       array
                      , base >= 4.7 && < 5
                      , data-memocombinators
