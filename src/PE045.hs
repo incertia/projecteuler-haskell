@@ -1,7 +1,6 @@
 module PE045 (solve045) where
 
 import Data.Bits (shiftR)
-import Data.List (intersect)
 
 -- notice that hexagonal numbers are also triangular numbers
 -- n * (2n - 1) = (2n - 1) * (2n) / 2
