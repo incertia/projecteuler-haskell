@@ -24,7 +24,7 @@ library
                      , PE027, PE028, PE029, PE030
                      , PE032, PE034, PE035
                      , PE037, PE038
-                     , PE041
+                     , PE041, PE045
                      , PE047, PE048
                      , PE067
   build-depends:       array
