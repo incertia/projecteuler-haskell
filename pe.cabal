@@ -15,7 +15,7 @@ cabal-version:       >=1.10
 
 library
   hs-source-dirs:      src
-  exposed-modules:     Solver
+  exposed-modules:     Solver, Common
   other-modules:       PE001, PE002, PE003, PE004, PE005
                      , PE006, PE007, PE008, PE009, PE010
                      , PE011, PE012, PE013, PE014, PE015
