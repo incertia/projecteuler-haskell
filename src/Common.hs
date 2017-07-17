@@ -7,8 +7,11 @@ hasiroot :: Integer -> Bool
 hasiroot n = r^2 == n where r = iroot n
 
 iroot :: Integer -> Integer
-iroot n = iroot' one 0 n
-  where one = maximum . takeWhile (<=n) $ (4^) <$> [1..]
+iroot n = case n `compare` 0 of
+  LT -> error "wtf"
+  EQ -> 0
+  GT -> iroot' one 0 n
+  where one = maximum . takeWhile (<=n) $ (4^) <$> [0..]
         iroot' :: Integer -> Integer -> Integer -> Integer
         iroot' 0 res _ = res
         iroot' one res op = iroot' one' res'' op'
