@@ -1,8 +1,16 @@
-module Main where
+module Main (main) where
 
+import Data.Time.Clock.POSIX (getPOSIXTime)
 import Solver (solve)
 import System.Environment (getProgName, getArgs)
 import Text.Read (readMaybe)
+
+timed :: IO () -> IO ()
+timed io = do
+  start <- getPOSIXTime
+  io
+  end <- getPOSIXTime
+  putStrLn $ "solution took " ++ show (round ((end - start) * 1000)) ++ "ms"
 
 main :: IO ()
 main = do
@@ -15,6 +23,6 @@ main = do
 
   case args of
     [n] -> case readMaybe n :: Maybe Integer of
-             Just n' -> solve n'
+             Just n' -> timed $ solve n'
              Nothing -> usage
     _   -> usage
