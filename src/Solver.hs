@@ -1,6 +1,7 @@
 module Solver (solve) where
 
 import Control.Exception (try)
+
 import qualified Data.HashMap.Lazy as H (HashMap, fromList, lookup)
 
 import PE001 (solve001)
@@ -37,6 +38,7 @@ import PE036 (solve036)
 import PE037 (solve037)
 import PE038 (solve038)
 import PE039 (solve039)
+import PE040 (solve040)
 import PE041 (solve041)
 import PE045 (solve045)
 import PE046 (solve046)
@@ -56,7 +58,7 @@ solvers = H.fromList
   , (021, solve021), (022, solve022), (023, solve023), (024, solve024), (025, solve025)
   , (027, solve027), (028, solve028), (029, solve029), (030, solve030)
   , (032, solve032), (034, solve034), (035, solve035)
-  , (036, solve036), (037, solve037), (038, solve038), (039, solve039)
+  , (036, solve036), (037, solve037), (038, solve038), (039, solve039), (040, solve040)
   , (041, solve041), (045, solve045)
   , (046, solve046), (047, solve047), (048, solve048)
   , (062, solve062)
