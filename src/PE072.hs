@@ -10,6 +10,8 @@ import Math.NumberTheory.Primes (factorise)
 -- Define |G_n| to be |F_n| + 1, and we obtain (through M\"{o}bius inversion)
 -- the formula
 -- |G_n| = n(n + 3)/2 - \sum_{d = 2}^n |G_{n/d}|
+-- We can also obtain via generalized M\"{o}bius inversion the formula
+-- \sum_{i = 1}^n phi(i) = \sum_{d = 1}^n (1/2) (n/d)(n/d + 1)
 
 phi :: Integer -> Integer
 phi n = (n * product (pred <$> pfn)) `div` product pfn
