@@ -30,6 +30,7 @@ library
                      , PE067
                      , PE072
                      , PE079
+                     , PE092
   build-depends:       arithmoi
                      , array
                      , base >= 4.7 && < 5
