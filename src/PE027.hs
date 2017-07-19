@@ -2,7 +2,7 @@ module PE027 (solve027) where
 
 import Control.Arrow ((&&&))
 import Data.List (maximumBy)
-import Data.Numbers.Primes (primes, isPrime)
+import Math.NumberTheory.Primes (primes, isPrime)
 import Data.Ord (comparing)
 
 countPrimes :: Integer -> Integer -> Integer

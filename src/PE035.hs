@@ -1,6 +1,6 @@
 module PE035 (solve035) where
 
-import Data.Numbers.Primes (isPrime)
+import Math.NumberTheory.Primes (isPrime)
 
 circular :: Integer -> Bool
 circular = and . fmap isPrime . nums

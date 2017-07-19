@@ -1,7 +1,7 @@
 module PE041 (solve041) where
 
 import Data.List (sort)
-import Data.Numbers.Primes (primes)
+import Math.NumberTheory.Primes (primes)
 
 -- abuse the fact that String = [Char]
 pandigital :: Integer -> Bool

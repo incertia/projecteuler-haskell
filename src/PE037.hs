@@ -1,6 +1,6 @@
 module PE037 (solve037) where
 
-import Data.Numbers.Primes (primes, isPrime)
+import Math.NumberTheory.Primes (primes, isPrime)
 
 truncatable :: Integer -> Bool
 truncatable n = ltrunc n && rtrunc n

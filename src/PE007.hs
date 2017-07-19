@@ -1,7 +1,7 @@
 module PE007 (solve007) where
 
--- wheel sieve is much faster
-import Data.Numbers.Primes (primes)
+-- arithmoi is good
+import Math.NumberTheory.Primes (primes)
 
 -- primes :: [Integer]
 -- primes = sieve [2..]

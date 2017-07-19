@@ -1,7 +1,7 @@
 module PE046 (solve046) where
 
 import Common (hasiroot)
-import Data.Numbers.Primes (primes, isPrime)
+import Math.NumberTheory.Primes (primes, isPrime)
 
 gc :: Integer -> Bool
 gc n = any hasiroot nums

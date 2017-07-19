@@ -30,12 +30,12 @@ library
                      , PE067
                      , PE072
                      , PE079
-  build-depends:       array
+  build-depends:       arithmoi
+                     , array
                      , base >= 4.7 && < 5
                      , containers
                      , data-memocombinators
                      , unordered-containers
-                     , primes
   ghc-options:         -O2
   default-language:    Haskell2010
 

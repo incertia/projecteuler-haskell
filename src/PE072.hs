@@ -2,7 +2,7 @@ module PE072 (solve072) where
 
 import Data.List (group)
 import Data.MemoCombinators (integral)
-import Data.Numbers.Primes (primeFactors)
+import Math.NumberTheory.Primes (factorise)
 
 -- we are counting terms in farey sequences
 -- most notably, |F_n| = |F_{n - 1}| + phi(n), where F_1 = 0, so
@@ -13,7 +13,7 @@ import Data.Numbers.Primes (primeFactors)
 
 phi :: Integer -> Integer
 phi n = (n * product (pred <$> pfn)) `div` product pfn
-  where pf = fmap head . group . primeFactors
+  where pf = fmap fst . factorise
         pfn = pf n
 
 solve072 :: String -> Integer
