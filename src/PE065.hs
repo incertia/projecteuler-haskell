@@ -1,11 +1,8 @@
 module PE065 (solve065) where
 
+import Common (conv)
 import Data.Char (digitToInt)
-import Data.Ratio (Ratio, numerator, (%))
-
-conv :: Integer -> [Integer] -> Ratio Integer
-conv 1 (x:_) = x % 1
-conv n (x:xs) = (x % 1) + recip (conv (n - 1) xs)
+import Data.Ratio (numerator)
 
 solve065 :: String -> Integer
 solve065 _ = sum . fmap (toInteger . digitToInt) . show . numerator . conv 100

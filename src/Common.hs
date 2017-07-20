@@ -1,6 +1,7 @@
 module Common where
 
 import Data.Bits (shiftR)
+import Data.Ratio (Ratio, numerator, (%))
 
 -- (iroot n)^2 = iroot n^2 is confusing so give it a name
 hasiroot :: Integer -> Bool
@@ -20,3 +21,7 @@ iroot n = case n `compare` 0 of
                                  else (op, res)
                 one'  = one `shiftR` 2
                 res'' = res' `shiftR` 1
+
+conv :: Integer -> [Integer] -> Ratio Integer
+conv 1 (x:_) = x % 1
+conv n (x:xs) = (x % 1) + recip (conv (n - 1) xs)
