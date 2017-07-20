@@ -32,7 +32,7 @@ library
                      , PE072
                      , PE079
                      , PE092
-                     , PE097
+                     , PE097, PE099
   build-depends:       arithmoi
                      , array
                      , base >= 4.7 && < 5
