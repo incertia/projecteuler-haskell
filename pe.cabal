@@ -19,7 +19,7 @@ library
   other-modules:       PE001, PE002, PE003, PE004, PE005
                      , PE006, PE007, PE008, PE009, PE010
                      , PE011, PE012, PE013, PE014, PE015
-                     , PE016, PE017, PE018, PE020
+                     , PE016, PE017, PE018, PE019, PE020
                      , PE021, PE022, PE023, PE024, PE025
                      , PE027, PE028, PE029, PE030
                      , PE032, PE034, PE035
@@ -27,8 +27,9 @@ library
                      , PE041, PE042, PE045
                      , PE046, PE047, PE048, PE050
                      , PE052, PE053, PE055
+                     , PE057
                      , PE062, PE065
-                     , PE067
+                     , PE067, PE069
                      , PE072
                      , PE079
                      , PE092
