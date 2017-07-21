@@ -1,6 +1,8 @@
 module Common where
 
 import Data.Bits (shiftR)
+import Data.List (elemIndex)
+import Data.Maybe (fromJust)
 import Data.Ratio (Ratio, numerator, (%))
 import Math.NumberTheory.Powers (integerSquareRoot, isSquare)
 
@@ -22,6 +24,10 @@ iroot n = case n `compare` 0 of
                                  else (op, res)
                 one'  = one `shiftR` 2
                 res'' = res' `shiftR` 1
+
+-- use this on infinite lists only
+period :: Eq a => [a] -> Integer
+period (x:xs) = toInteger . succ . fromJust . elemIndex x $ xs
 
 cfrac :: Integer -> [Integer]
 cfrac = fmap (\(_, _, a) -> a) . cfrac'
