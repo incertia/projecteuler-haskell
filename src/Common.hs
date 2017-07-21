@@ -24,11 +24,13 @@ iroot n = case n `compare` 0 of
                 res'' = res' `shiftR` 1
 
 cfrac :: Integer -> [Integer]
-cfrac n
-  | isSquare n = [a0]
-  | otherwise  = [a_i | (_, _, a_i) <- stuff]
-  where stuff = iterate next (0, 1, a0)
-        a0 = integerSquareRoot n
+cfrac = fmap (\(_, _, a) -> a) . cfrac'
+
+cfrac' :: Integer -> [(Integer, Integer, Integer)]
+cfrac' n
+  | isSquare n = [(0, 1, a0)]
+  | otherwise  = iterate next (0, 1, a0)
+  where a0 = integerSquareRoot n
         next (m, d, a) = (m', d', a')
           where m' = d * a - m
                 d' = (n - m'^2) `div` d
