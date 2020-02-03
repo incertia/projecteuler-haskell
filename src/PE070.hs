@@ -4,7 +4,7 @@ import Data.List (minimumBy, sort)
 import Data.Ratio ((%))
 import Data.Ord (comparing)
 import Math.NumberTheory.Powers (integerSquareRoot)
-import Math.NumberTheory.Primes (primes)
+import Math.NumberTheory.Primes (primes, unPrime)
 
 -- notice that n / phi(n) = \product_{p \mid n} \frac{p}{p - 1}
 -- an odd number of primes won't work for some provable reason
@@ -24,4 +24,4 @@ solve070 _ = fst . minimumBy (comparing snd) $ nums
                                             totientPerm p q]
         totientPerm p q = sort (show (p * q)) == sort (show ((p - 1) * (q - 1)))
         totientRatio p q = (p * q) % ((p - 1) * (q - 1))
-        pl = filter ((==2) . (`mod` 3)) . takeWhile (<5000) $ primes
+        pl = filter ((==2) . (`mod` 3)) . takeWhile (<5000) $ unPrime <$> primes

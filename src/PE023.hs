@@ -2,10 +2,10 @@ module PE023 (solve023) where
 
 import Data.Array (listArray, (!))
 import Data.List (group)
-import Math.NumberTheory.Primes (primes, factorise)
+import Math.NumberTheory.Primes (primes, factorise, unPrime)
 
 d :: Integer -> Integer
-d n = product [(p ^ (k + 1) - 1) `div` (p - 1) | (p,k) <- factorise n]
+d n = product [(unPrime p ^ (k + 1) - 1) `div` (unPrime p - 1) | (p,k) <- factorise n]
 
 ab :: Integer -> Bool
 ab n = d n - n > n
